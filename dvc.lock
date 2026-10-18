@@ -5,8 +5,8 @@ stages:
     deps:
     - path: data/transactions.csv
       hash: md5
-      md5: 24eedc464b01a846f569abe00d11354b
-      size: 85902
+      md5: e5add76bfff84e98ca754e25e0140766
+      size: 120404
     - path: src/preparer.py
       hash: md5
       md5: 0e8bed4380fe98261cfaa022a3d41655
@@ -18,19 +18,19 @@ stages:
     outs:
     - path: data/prepare/test.csv
       hash: md5
-      md5: 03e67017a2053a20960f6a72d9fb351e
-      size: 21526
+      md5: fd7b5b03c23e52a5128fad50eedf3ed3
+      size: 30191
     - path: data/prepare/train.csv
       hash: md5
-      md5: a70a67616e45fa6c255f1dba4b904286
-      size: 64417
+      md5: 010347968811b237706bedbc79371b5e
+      size: 90254
   entrainer:
     cmd: python src/entrainer.py
     deps:
     - path: data/prepare/train.csv
       hash: md5
-      md5: a70a67616e45fa6c255f1dba4b904286
-      size: 64417
+      md5: 010347968811b237706bedbc79371b5e
+      size: 90254
     - path: src/entrainer.py
       hash: md5
       md5: c1acee7f8418daebb1ee8e2b665ec338
@@ -43,19 +43,19 @@ stages:
     outs:
     - path: models/model.pkl
       hash: md5
-      md5: 20f9629cc298dd8d41a21ca246ce17da
-      size: 8044745
+      md5: 9ba9b31626da837ca93a5ebec3bbfe09
+      size: 11444905
   evaluer:
     cmd: python src/evaluer.py
     deps:
     - path: data/prepare/test.csv
       hash: md5
-      md5: 03e67017a2053a20960f6a72d9fb351e
-      size: 21526
+      md5: fd7b5b03c23e52a5128fad50eedf3ed3
+      size: 30191
     - path: models/model.pkl
       hash: md5
-      md5: 20f9629cc298dd8d41a21ca246ce17da
-      size: 8044745
+      md5: 9ba9b31626da837ca93a5ebec3bbfe09
+      size: 11444905
     - path: src/evaluer.py
       hash: md5
       md5: 3c3f8a39c8b57c3267ed6c86f04b7209
@@ -63,9 +63,9 @@ stages:
     outs:
     - path: reports/confusion.png
       hash: md5
-      md5: 480396cf9dc8ba2f37057451d78bfdc8
-      size: 14473
+      md5: 4f3cbd44f0339f97bab7b726d44fcce7
+      size: 16575
     - path: reports/metrics.json
       hash: md5
-      md5: 0aeb751a00ff8e8ad999cccfc544c5be
+      md5: 955b198a2073df5704d606c58f28e70f
       size: 65
